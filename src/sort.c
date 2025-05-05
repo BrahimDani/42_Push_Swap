@@ -1,0 +1,77 @@
+#include "../include/push_swap.h"
+
+void	radix_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	int	max_value;
+	int	max_bits;
+	int	i;
+	int	j;
+
+	max_value = stacksize(*stack_a) - 1;
+	max_bits = 0;
+	while (max_value >> max_bits)
+		max_bits++;
+	i = 0;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < max_value + 1)
+		{
+			if (((*stack_a)->value >> i) & 1)
+				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
+			j++;
+		}
+		while (*stack_b)
+			pa(stack_a, stack_b);
+		i++;
+	}
+}
+
+void	sort(t_stack **stack_a, t_stack **stack_b)
+{
+	int	min;
+	int	max;
+
+	if (stacksize(*stack_a) <= 1)
+		return ;
+	if (stacksize(*stack_a) == 2)
+		sa(stack_a);
+	else if (stacksize(*stack_a) == 3)
+		sort_by_3(stack_a);
+	else if (stacksize(*stack_a) == 4)
+		sort_by_4(stack_a , stack_b);
+	else if (stacksize(*stack_a) == 5)
+		sort_by_5(stack_a , stack_b);
+	else
+		radix_sort(stack_a, stack_b);
+}
+
+/*
+void	sort(t_stack **stack_a, t_stack **stack_b)
+{
+	int	min;
+	int	max;
+
+	if (stacksize(*stack_a) == 3)
+		sort_by_3(stack_a);
+	else if (stacksize(*stack_a) == 5)
+	{
+		while (stacksize(*stack_a) > 3)
+		{
+			find_min_max(*stack_a, &min, &max);
+			while ((*stack_a)->value != min)
+				ra(stack_a);
+			pb(stack_a, stack_b);
+		}
+		sort_by_3(stack_a);
+		if((*stack_b)->value < (*stack_b)->next->value)
+			sb(stack_b);
+		pa(stack_a, stack_b);
+		pa(stack_a, stack_b);
+	}
+	else
+		radix_sort(stack_a, stack_b);
+}
+*/

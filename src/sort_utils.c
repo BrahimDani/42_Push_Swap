@@ -1,0 +1,67 @@
+#include "../include/push_swap.h"
+
+void	find_min_max(t_stack *stack_a, int *min, int *max)
+{
+	*min = stack_a->value;
+	*max = stack_a->value;
+	while (stack_a)
+	{
+		if (stack_a->value < *min)
+			*min = stack_a->value;
+		else if (stack_a->value > *max)
+			*max = stack_a->value;
+			stack_a = stack_a->next;
+	}
+}
+
+void	sort_by_5(t_stack **stack_a, t_stack **stack_b)
+{
+	int	min;
+	int	max;
+
+	while (stacksize(*stack_a) > 3)
+	{
+		find_min_max(*stack_a, &min, &max);
+		while ((*stack_a)->value != min)
+			ra(stack_a);
+		pb(stack_a, stack_b);
+	}
+	sort_by_3(stack_a);
+	if ((*stack_a) && (*stack_b)->next && (*stack_b)->value < (*stack_b)->next->value)
+		sb(stack_b);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
+}
+
+void	sort_by_4(t_stack **stack_a, t_stack **stack_b)
+{
+	int	min;
+
+	find_min_max(*stack_a, &min, NULL);
+	while ((*stack_a)->value != min)
+		ra(stack_a);
+	pb(stack_a, stack_b);
+	sort_by_3(stack_a);
+	pa(stack_a, stack_b);
+}
+
+void	sort_by_3(t_stack **stack_a)
+{
+	int	min;
+	int	max;
+
+	while (!is_sorted(*stack_a))
+	{
+		find_min_max(*stack_a, &min, &max);
+		if ((*stack_a)-> value == max)
+		{
+			ra(stack_a);
+			if(!is_sorted(*stack_a))
+				sa(stack_a);
+		}
+		else if ((*stack_a)->value == min)
+			ra(stack_a);
+		else
+			sa(stack_a);
+	}
+}
