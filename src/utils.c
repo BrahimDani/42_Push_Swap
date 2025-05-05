@@ -25,11 +25,25 @@ void	free_stack(t_stack **stack)
 	}
 }
 
+int	get_stacksize(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
+}
+
 int	stacksize(t_stack *stack)
 {
-	int	count = 0;
+	int	count;
 
-	while (stack)
+	count = 0;
+	while (stack->next)
 	{
 		count++;
 		stack = stack->next;

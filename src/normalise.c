@@ -57,11 +57,11 @@ int	normalise_stack(t_stack **stack)
 	copy = stack_copy(tmp);
 	if (!copy)
 		return (0);
-	copy = sort_tab(copy, stacksize(*stack));
+	copy = sort_tab(copy, get_stacksize(*stack));
 	while (tmp)
 	{
 		j = 0;
-		while (j < stacksize(*stack))
+		while (j < get_stacksize(*stack))
 		{
 			if (tmp->value == copy[j])
 			{

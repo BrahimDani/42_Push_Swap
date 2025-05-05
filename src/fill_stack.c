@@ -31,16 +31,13 @@ void	add_stack(t_stack **stack, size_t value)
 	t_stack	*new;
 	t_stack	*tmp;
 
-	new = malloc(sizeof(t_stack));
+	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		return;
 	new->value = value;
 	new->next = NULL;
 	if (!*stack)
-	{
 		*stack = new;
-		return;
-	}
 	else
 	{
 		tmp = *stack;

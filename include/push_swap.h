@@ -50,5 +50,6 @@ void			sa(t_stack **stack_a);
 void			sb(t_stack **stack_b);
 void			swap_both(t_stack **stack1, t_stack **stack2);
 void			free_stack(t_stack **stack);
+int				get_stacksize(t_stack *stack);
 
 #endif
