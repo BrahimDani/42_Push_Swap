@@ -1,5 +1,17 @@
 #include "../include/push_swap.h"
 
+
+void	display_stack(t_stack **stack_a) {
+	t_stack *tmp_stack;
+
+	tmp_stack = *stack_a;
+	while (tmp_stack) {
+		printf("%d \n", tmp_stack->value);
+		tmp_stack = tmp_stack->next;
+	}
+	printf("=====================\n");
+}
+
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	max_value;
@@ -7,7 +19,11 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	int	i;
 	int	j;
 
-	max_value = stacksize(*stack_a) - 1;
+	// printf("display Stack A\n");
+	// display_stack(stack_a);
+	// printf("display stack B\n");
+	// display_stack(stack_b);
+	max_value = get_stacksize(*stack_a) - 1;
 	max_bits = 0;
 	while (max_value >> max_bits)
 		max_bits++;
@@ -17,6 +33,12 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 		j = 0;
 		while (j < max_value + 1)
 		{
+			// if (!(*stack_a)->value) {
+			// 	// printf("ERROR NULL\n");
+			// 	if (!*stack_a) {
+			// 		printf("stack A null");
+			// 	}
+			// }
 			if (((*stack_a)->value >> i) & 1)
 				ra(stack_a);
 			else
@@ -34,15 +56,15 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	int	min;
 	int	max;
 
-	if (stacksize(*stack_a) <= 1)
+	if (get_stacksize(*stack_a) <= 1)
 		return ;
-	if (stacksize(*stack_a) == 2)
+	else if (get_stacksize(*stack_a) == 2)
 		sa(stack_a);
-	else if (stacksize(*stack_a) == 3)
+	else if (get_stacksize(*stack_a) == 3)
 		sort_by_3(stack_a);
-	else if (stacksize(*stack_a) == 4)
+	else if (get_stacksize(*stack_a) == 4)
 		sort_by_4(stack_a , stack_b);
-	else if (stacksize(*stack_a) == 5)
+	else if (get_stacksize(*stack_a) == 5)
 		sort_by_5(stack_a , stack_b);
 	else
 		radix_sort(stack_a, stack_b);

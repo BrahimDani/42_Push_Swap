@@ -8,7 +8,6 @@ int	is_sorted(t_stack *stack)
 			return (0);
 		stack = stack->next;
 	}
-	ft_putstr_fd("AlreadySorted\n", 2);
 	return (1);
 }
 
@@ -35,5 +34,6 @@ int main(int argc, char **argv)
 	if (!is_sorted(stack_a))
 		sort(&stack_a, &stack_b);
 	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

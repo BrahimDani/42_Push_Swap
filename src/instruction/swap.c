@@ -4,7 +4,9 @@ void	swap(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	if(*stack && (*stack)->next)
+	// if (stack && *stack && (*stack)->next)
+	// 	return ;
+	if (*stack && (*stack)->next)
 	{
 		tmp = (*stack)->next;
 		(*stack)->next = tmp->next;
@@ -27,7 +29,9 @@ void	sb(t_stack **stack_b)
 
 void	swap_both(t_stack **stack1, t_stack **stack2)
 {
-	swap(stack1);
-	swap(stack2);
+	if (stack1 && *stack1 && (*stack1)->next)
+		swap(stack1);
+	if (stack2 && *stack2 && (*stack2)->next)
+		swap(stack2);
 	ft_putstr_fd("ss\n", 1);
 }

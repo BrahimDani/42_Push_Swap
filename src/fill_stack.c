@@ -47,21 +47,60 @@ void	add_stack(t_stack **stack, size_t value)
 	}
 }
 
-char	*ft_join_free(char *stash, char *buffer)
+
+char	*ft_join_free(char *s1, char *s2)
 {
-	char	*res;
+	char	*str;
 	char	*tmp;
 
-	if (!stash || !buffer)
-		return (NULL);
-	tmp = ft_strjoin(stash, " ");
-	if (!tmp)
-		return (free(stash), NULL);
-	res = ft_strjoin(tmp, buffer);
+	str = ft_strjoin(s1, " ");
+	tmp = str;
+	str = ft_strjoin(str, s2);
+	free(s1);
 	free(tmp);
-	free(stash);
-	return (res);
+	return (str);
 }
+
+/*
+int	contain_alpha(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isalpha(str[i]))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	fill_stack_tabs(t_stack **stack, char *ptr)
+{
+	int		i;
+	char	**tab;
+
+	i = 0;
+	tab = ft_split(ptr, ' ');
+	while (tab[i])
+	{
+		if (ft_atoll(tab[i]) > INT_MAX || ft_atoll(tab[i])
+			< INT_MIN || contain_alpha(tab[i]))
+		{
+			free(ptr);
+			free_tab(tab);
+			return (0);
+		}
+		add_stack(stack, ft_atoll(tab[i]));
+		i++;
+	}
+	free(ptr);
+	free_tab(tab);
+	return (1);
+}
+*/
+
 
 int	fill_stack_tabs(t_stack **stack, char *ptr)
 {
@@ -89,6 +128,7 @@ int	fill_stack_tabs(t_stack **stack, char *ptr)
 	return (free(ptr), free_tab(tab), 1);
 }
 
+
 int fill_stack(t_stack **stack, char **argv)
 {
 	int      i;
@@ -96,7 +136,8 @@ int fill_stack(t_stack **stack, char **argv)
 
 	ptr = NULL;
 	i = 1;
-	//secu si arg vide!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	//if (empty_arg(argv))
+	//	return (0);
 	while (argv[i])
 	{
 		if(!ptr)

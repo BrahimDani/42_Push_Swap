@@ -1,5 +1,31 @@
 #include "../include/push_swap.h"
 
+int	empty_arg(char **argv)
+{
+	int	i;
+	int	j;
+	int	has_digit;
+
+	i = 1;
+	while (argv[i])
+	{
+		if (ft_strlen(argv[i]) == 0)
+			return (1);
+		j = 0;
+		has_digit = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]))
+				has_digit = 1;
+			j++;
+		}
+		if (!has_digit)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 void	free_tab(char **tab)
 {
 	int	i;
@@ -29,8 +55,10 @@ int	get_stacksize(t_stack *stack)
 {
 	int	i;
 
-	i = 0;
-	while (stack)
+	i = 1;
+	if (!stack)
+		return (0);
+	while (stack->next)
 	{
 		stack = stack->next;
 		i++;
@@ -43,10 +71,10 @@ int	stacksize(t_stack *stack)
 	int	count;
 
 	count = 0;
-	while (stack->next)
+	while (stack)
 	{
-		count++;
 		stack = stack->next;
+		count++;
 	}
 	return (count);
 }

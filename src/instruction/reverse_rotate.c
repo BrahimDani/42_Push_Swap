@@ -5,6 +5,8 @@ void    reverse_rotate(t_stack **stack)
     t_stack *tmp1;
     t_stack *tmp2;
 
+    if (!stack || !*stack || !(*stack)->next)
+        return ;
     if (*stack && (*stack)->next)
     {
         tmp1 = *stack;

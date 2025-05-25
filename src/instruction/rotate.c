@@ -5,9 +5,11 @@ void	rotate(t_stack **stack)
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
+	// if (!stack && !*stack || !(*stack)->next)
+	// 	return ;
 	if (*stack && (*stack)->next)
 	{
-		tmp1 = (*stack)->next;
+		tmp1 = *stack;
 		*stack = (*stack)->next;
 		tmp2 = *stack;
 		while (tmp2->next)

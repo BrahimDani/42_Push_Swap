@@ -10,7 +10,7 @@ void	find_min_max(t_stack *stack_a, int *min, int *max)
 			*min = stack_a->value;
 		else if (stack_a->value > *max)
 			*max = stack_a->value;
-			stack_a = stack_a->next;
+		stack_a = stack_a->next;
 	}
 }
 
@@ -19,7 +19,7 @@ void	sort_by_5(t_stack **stack_a, t_stack **stack_b)
 	int	min;
 	int	max;
 
-	while (stacksize(*stack_a) > 3)
+	while (get_stacksize(*stack_a) > 3)
 	{
 		find_min_max(*stack_a, &min, &max);
 		while ((*stack_a)->value != min)
@@ -36,8 +36,9 @@ void	sort_by_5(t_stack **stack_a, t_stack **stack_b)
 void	sort_by_4(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;
+	int	max;
 
-	find_min_max(*stack_a, &min, NULL);
+	find_min_max(*stack_a, &min, &max);
 	while ((*stack_a)->value != min)
 		ra(stack_a);
 	pb(stack_a, stack_b);
@@ -53,7 +54,7 @@ void	sort_by_3(t_stack **stack_a)
 	while (!is_sorted(*stack_a))
 	{
 		find_min_max(*stack_a, &min, &max);
-		if ((*stack_a)-> value == max)
+		if ((*stack_a)->value == max)
 		{
 			ra(stack_a);
 			if(!is_sorted(*stack_a))

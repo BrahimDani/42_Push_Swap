@@ -1,4 +1,4 @@
-#ifndef PUSH_SWAP_H
+#ifndef	PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
@@ -51,5 +51,8 @@ void			sb(t_stack **stack_b);
 void			swap_both(t_stack **stack1, t_stack **stack2);
 void			free_stack(t_stack **stack);
 int				get_stacksize(t_stack *stack);
+int				empty_arg(char **argv);
+int				contain_alpha(char *str);
+t_stack			*new_stack(int value);
 
 #endif
