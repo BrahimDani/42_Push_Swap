@@ -4,8 +4,6 @@ void	swap(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	// if (stack && *stack && (*stack)->next)
-	// 	return ;
 	if (*stack && (*stack)->next)
 	{
 		tmp = (*stack)->next;

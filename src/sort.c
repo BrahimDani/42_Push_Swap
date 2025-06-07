@@ -19,10 +19,6 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	int	i;
 	int	j;
 
-	// printf("display Stack A\n");
-	// display_stack(stack_a);
-	// printf("display stack B\n");
-	// display_stack(stack_b);
 	max_value = get_stacksize(*stack_a) - 1;
 	max_bits = 0;
 	while (max_value >> max_bits)
@@ -33,12 +29,6 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 		j = 0;
 		while (j < max_value + 1)
 		{
-			// if (!(*stack_a)->value) {
-			// 	// printf("ERROR NULL\n");
-			// 	if (!*stack_a) {
-			// 		printf("stack A null");
-			// 	}
-			// }
 			if (((*stack_a)->value >> i) & 1)
 				ra(stack_a);
 			else

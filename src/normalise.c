@@ -1,6 +1,5 @@
 #include "../include/push_swap.h"
 
-//trie la stack 
 int	*sort_tab(int *tab, int size)
 {
 	int	i;

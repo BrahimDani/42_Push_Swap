@@ -136,8 +136,8 @@ int fill_stack(t_stack **stack, char **argv)
 
 	ptr = NULL;
 	i = 1;
-	//if (empty_arg(argv))
-	//	return (0);
+	if (empty_arg(argv))
+		return (0);
 	while (argv[i])
 	{
 		if(!ptr)
