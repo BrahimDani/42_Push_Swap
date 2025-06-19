@@ -1,23 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   empty_arg.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/20 00:12:58 by brdani            #+#    #+#             */
+/*   Updated: 2025/06/20 00:24:05 by brdani           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
-int check_sign(char *str)
+int	check_sign(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
 		if ((str[i] == '-' || str[i] == '+') && (!ft_isdigit(str[i + 1])
-							|| (i > 0 && str[i - 1] != ' ')))
-						return (1);
+				|| (i > 0 && str[i - 1] != ' ')))
+			return (1);
 		i++;
 	}
 	return (0);
 }
 
-int contain_num(char *str)
+int	contain_num(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

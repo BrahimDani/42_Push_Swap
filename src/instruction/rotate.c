@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/20 00:13:56 by brdani            #+#    #+#             */
+/*   Updated: 2025/06/20 00:40:18 by brdani           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	rotate(t_stack **stack)
@@ -5,8 +17,6 @@ void	rotate(t_stack **stack)
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
-	// if (!stack && !*stack || !(*stack)->next)
-	// 	return ;
 	if (*stack && (*stack)->next)
 	{
 		tmp1 = *stack;
