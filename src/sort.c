@@ -1,17 +1,5 @@
 #include "../include/push_swap.h"
 
-
-void	display_stack(t_stack **stack_a) {
-	t_stack *tmp_stack;
-
-	tmp_stack = *stack_a;
-	while (tmp_stack) {
-		printf("%d \n", tmp_stack->value);
-		tmp_stack = tmp_stack->next;
-	}
-	printf("=====================\n");
-}
-
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	max_value;
@@ -59,31 +47,3 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	else
 		radix_sort(stack_a, stack_b);
 }
-
-/*
-void	sort(t_stack **stack_a, t_stack **stack_b)
-{
-	int	min;
-	int	max;
-
-	if (stacksize(*stack_a) == 3)
-		sort_by_3(stack_a);
-	else if (stacksize(*stack_a) == 5)
-	{
-		while (stacksize(*stack_a) > 3)
-		{
-			find_min_max(*stack_a, &min, &max);
-			while ((*stack_a)->value != min)
-				ra(stack_a);
-			pb(stack_a, stack_b);
-		}
-		sort_by_3(stack_a);
-		if((*stack_b)->value < (*stack_b)->next->value)
-			sb(stack_b);
-		pa(stack_a, stack_b);
-		pa(stack_a, stack_b);
-	}
-	else
-		radix_sort(stack_a, stack_b);
-}
-*/

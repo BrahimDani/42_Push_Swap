@@ -1,29 +1,29 @@
 #include "../include/push_swap.h"
 
-int	empty_arg(char **argv)
+long long int	ft_atoll(const char *str)
 {
-	int	i;
-	int	j;
-	int	has_digit;
+	int				negative;
+	int				i;
+	long long int	nb;
 
-	i = 1;
-	while (argv[i])
+	i = 0;
+	negative = 1;
+	nb = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (ft_strlen(argv[i]) == 0)
-			return (1);
-		j = 0;
-		has_digit = 0;
-		while (argv[i][j])
-		{
-			if (ft_isdigit(argv[i][j]))
-				has_digit = 1;
-			j++;
-		}
-		if (!has_digit)
-			return (1);
+		if (str[i] == '-')
+			negative = negative * -1;
 		i++;
 	}
-	return (0);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		nb = nb * 10 + (str[i] - 48);
+		i++;
+	}
+	return (nb * negative);
 }
 
 void	free_tab(char **tab)

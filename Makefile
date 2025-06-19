@@ -22,7 +22,8 @@ C_FILE          =       main.c							\
 						instruction/push.c				\
 						instruction/reverse_rotate.c	\
 						instruction/rotate.c			\
-						instruction/swap.c
+						instruction/swap.c				\
+						empty_arg.c
 
 
 SRC_DIR         =       ./src/
