@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/20 00:13:22 by brdani            #+#    #+#             */
+/*   Updated: 2025/06/20 00:46:01 by brdani           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	find_min_max(t_stack *stack_a, int *min, int *max, int *index)
@@ -39,7 +51,8 @@ void	sort_by_5(t_stack **stack_a, t_stack **stack_b)
 		pb(stack_a, stack_b);
 	}
 	sort_by_3(stack_a);
-	if ((*stack_a) && (*stack_b)->next && (*stack_b)->value < (*stack_b)->next->value)
+	if ((*stack_a) && (*stack_b)->next && \
+(*stack_b)->value < (*stack_b)->next->value)
 		sb(stack_b);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
@@ -71,7 +84,7 @@ void	sort_by_3(t_stack **stack_a)
 		if ((*stack_a)->value == max)
 		{
 			ra(stack_a);
-			if(!is_sorted(*stack_a))
+			if (!is_sorted(*stack_a))
 				sa(stack_a);
 		}
 		else if ((*stack_a)->value == min)

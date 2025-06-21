@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/20 00:13:28 by brdani            #+#    #+#             */
+/*   Updated: 2025/06/20 00:32:36 by brdani           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
@@ -41,9 +53,9 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	else if (get_stacksize(*stack_a) == 3)
 		sort_by_3(stack_a);
 	else if (get_stacksize(*stack_a) == 4)
-		sort_by_4(stack_a , stack_b);
+		sort_by_4(stack_a, stack_b);
 	else if (get_stacksize(*stack_a) == 5)
-		sort_by_5(stack_a , stack_b);
+		sort_by_5(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
 }

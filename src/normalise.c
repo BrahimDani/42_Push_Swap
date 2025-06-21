@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   normalise.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/20 00:13:17 by brdani            #+#    #+#             */
+/*   Updated: 2025/06/20 00:30:57 by brdani           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 int	*sort_tab(int *tab, int size)
@@ -32,7 +44,7 @@ int	*stack_copy(t_stack *stack)
 
 	i = 0;
 	copy = malloc(sizeof(int) * stacksize(stack));
-	if(!copy)
+	if (!copy)
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (NULL);

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/20 00:13:41 by brdani            #+#    #+#             */
+/*   Updated: 2025/06/20 00:40:03 by brdani           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
-void    push(t_stack **stack1, t_stack **stack2)
+void	push(t_stack **stack1, t_stack **stack2)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (*stack1)
 	{
