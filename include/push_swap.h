@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 00:12:42 by brdani            #+#    #+#             */
-/*   Updated: 2025/06/20 00:17:09 by brdani           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef PUSH_SWAP_H
+#ifndef	PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
@@ -22,9 +10,10 @@
 
 typedef struct s_stack
 {
-	int				size;
+	int 			size;
 	int				value;
 	struct s_stack	*next;
+	
 }	t_stack;
 
 int				check_param(t_stack **stack);
@@ -39,7 +28,7 @@ long long int	ft_atoll(const char *str);
 void			free_tab(char **tab);
 int				stacksize(t_stack *stack);
 int				is_sorted(t_stack *stack);
-void			find_min_max(t_stack *stack_a, int *min, int *max, int *index);
+void			find_min_max(t_stack *stack_a, int *min, int *max, int *count);
 void			sort_by_3(t_stack **stack_a);
 void			sort_by_4(t_stack **stack_a, t_stack **stack_b);
 void			sort_by_5(t_stack **stack_a, t_stack **stack_b);

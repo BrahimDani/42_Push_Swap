@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
 	if (!fill_stack(&stack_a, argv))
 	{
 		ft_putstr_fd("Error\n", 2);
+		free_stack(&stack_a);
 		return (0);
 	}
 	if (!stack_a || !check_param(&stack_a) || !normalise_stack(&stack_a))
