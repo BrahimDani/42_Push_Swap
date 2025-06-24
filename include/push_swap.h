@@ -1,4 +1,16 @@
-#ifndef	PUSH_SWAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/24 02:19:53 by brdani            #+#    #+#             */
+/*   Updated: 2025/06/24 02:20:52 by brdani           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
@@ -10,10 +22,9 @@
 
 typedef struct s_stack
 {
-	int 			size;
+	int				size;
 	int				value;
 	struct s_stack	*next;
-	
 }	t_stack;
 
 int				check_param(t_stack **stack);

@@ -6,7 +6,7 @@
 /*   By: brdani <brdani@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 00:13:22 by brdani            #+#    #+#             */
-/*   Updated: 2025/06/20 00:46:01 by brdani           ###   ########.fr       */
+/*   Updated: 2025/06/24 02:22:55 by brdani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	find_min_max(t_stack *stack_a, int *min, int *max, int *index)
 {
-	int count;
+	int	count;
+
 	*min = stack_a->value;
 	*max = stack_a->value;
 	count = 0;
